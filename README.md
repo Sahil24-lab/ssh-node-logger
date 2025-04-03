@@ -1,6 +1,10 @@
+[![npm version](https://badge.fury.io/js/ssh-node-logger.svg)](https://www.npmjs.com/package/ssh-node-logger)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Node.js](https://img.shields.io/badge/node-%3E=14-green.svg)](https://nodejs.org)
+
 # ssh-node-logger
 
-A `npm-package` logger utility that can be switched between development and production modes.
+A zero-dependency `npm-package` logger utility for Node.js with built-in log rotation, environment-aware output, and optional caching for production use.
 
 ## Summary
 
@@ -10,10 +14,12 @@ A `npm-package` logger utility that can be switched between development and prod
 
 ### Features:
 
-- Built-in log rotation.
-- Colorized log messages.
-- Four log levels with custom output.
-- Caching log messages.
+- Automatic detection of logging mode via `NODE_ENV`
+- Log rotation when file exceeds 1MB
+- Colorized console output
+- Caching in production for efficient writes
+- Four log levels: `LOG`, `INFO`, `WARN`, `ERROR`
+- Customizable log path and log level
 
 ## Install
 
@@ -58,8 +64,6 @@ logger.setPath("path/to/your/logfile.log");
 
 Contributions are welcome. Submit issues or pull requests.
 
-
-
 ## License
 
-MIT License 
+MIT License
