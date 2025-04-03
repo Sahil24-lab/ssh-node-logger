@@ -1,7 +1,7 @@
 // test/logger.test.ts
 import fs from "fs";
 import path from "path";
-import logger from "../lib/logger";
+import logger from "../src/logger";
 
 describe("ssh-node-logger tests", () => {
   beforeEach(() => {
