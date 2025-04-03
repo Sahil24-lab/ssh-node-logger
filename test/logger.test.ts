@@ -1,17 +1,17 @@
-// test/logger.test.js
-const fs = require("fs");
-const path = require("path");
-const logger = require("../lib/logger");
+// test/logger.test.ts
+import fs from "fs";
+import path from "path";
+import logger from "../lib/logger";
 
 describe("ssh-node-logger tests", () => {
   beforeEach(() => {
     // Reset logger properties for each test.
     logger.level = logger.LOG;
     logger.isDebug = true;
-    logger._logCache = [];
-    if (logger._flushTimer) {
-      clearInterval(logger._flushTimer);
-      logger._flushTimer = null;
+    (logger as any)._logCache = [];
+    if ((logger as any)._flushTimer) {
+      clearInterval((logger as any)._flushTimer);
+      (logger as any)._flushTimer = null;
     }
     logger.logFilePath = null;
   });
@@ -46,9 +46,9 @@ describe("ssh-node-logger tests", () => {
     logger.isDebug = false;
     console.log = jest.fn();
     logger.log("Cached log message");
-    expect(logger._logCache.length).toBe(1);
+    expect((logger as any)._logCache.length).toBe(1);
     logger.flush();
-    expect(logger._logCache.length).toBe(0);
+    expect((logger as any)._logCache.length).toBe(0);
     expect(console.log).toHaveBeenCalled();
   });
 

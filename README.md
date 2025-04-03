@@ -2,7 +2,13 @@
 
 A `npm-package` logger utility that can be switched between development and production modes.
 
-Features:
+## Summary
+
+- The package auto-detects logging mode based on `NODE_ENV` so you don't need to manually set a flag in each file.
+- Log rotation renames the log file when it exceeds a predefined size (1MB), and caching buffers log messages in production for periodic flushing.
+- Follow the instructions below to test and integrate the package into your project.
+
+### Features:
 
 - Built-in log rotation.
 - Colorized log messages.
@@ -52,19 +58,8 @@ logger.setPath("path/to/your/logfile.log");
 
 Contributions are welcome. Submit issues or pull requests.
 
+
+
 ## License
 
-MIT License
-
----
-
-
-
-**.gitignore**
-
-```gitignore
-node_modules/
-*.log
-coverage/
-
-```
+MIT License 

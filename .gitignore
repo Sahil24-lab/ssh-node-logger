@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.test
+.env.local
+
+# Jest coverage and cache
+coverage/
+jest-cache/
+jest-coverage/
+.cache/
+
+# Build artifacts (if later added)
+dist/
+build/
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.swp
+
+# Optional npm package lock
+package-lock.json
+# Uncomment below if using Yarn instead of npm
+# yarn.lock
