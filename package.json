@@ -12,6 +12,7 @@
     "release": "standard-version",
     "release:push": "git push && git push --tags"
   },
+  "files": ["lib", "package.json", "README.md"],
   "keywords": [
     "logger",
     "dev",
