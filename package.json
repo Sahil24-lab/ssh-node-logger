@@ -4,14 +4,17 @@
   "description": "A logger utility that can be switched between development and production modes, featuring built-in log rotation, colorized output, multiple log levels, and caching.",
   "main": "lib/logger.ts",
   "types": "lib/logger.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test",
-    "release": "standard-version",
-    "release:push": "git push && git push --tags"
-  },
+"scripts": {
+  "build": "tsc",
+  "test": "jest",
+  "prepare": "npm run build",
+  "prepublishOnly": "npm test",
+  "release": "standard-version",
+  "release:patch": "npm run release -- --release-as patch && npm run release:push",
+  "release:minor": "npm run release -- --release-as minor && npm run release:push",
+  "release:major": "npm run release -- --release-as major && npm run release:push",
+  "release:push": "git push && git push --tags"
+},
   "files": ["lib", "package.json", "README.md"],
   "keywords": [
     "logger",

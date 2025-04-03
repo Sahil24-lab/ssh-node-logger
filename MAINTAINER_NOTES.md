@@ -4,17 +4,28 @@
 
 To bump version, update changelog, tag, and push:
 
+Run one of the following based on the type of release:
+
 ```bash
-npm run release -- --release-as patch   # or minor / major
-npm run release:push
+npm run release:patch   # For bug fixes or small changes
+npm run release:minor   # For new features (backward compatible)
+npm run release:major   # For breaking changes
 ```
+
+Each command will:
+
+- Bump the version in package.json
+- Update `CHANGELOG.md`
+- Commit the changes
+- Tag the release (e.g., `v1.1.0`)
+- Push the code and tag to GitHub
 
 ## Publishing
 
 Publishing is automatic on `master` push if a version has been bumped:
 
 - Runs `npm run build`, `npm test`
-- Publishes to npm
+- `npm run release:minor` or `npm run release:major` Publishes to npm
 - Creates a GitHub release with a tag
 
 # Tokens and Auth
